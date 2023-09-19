@@ -62,10 +62,9 @@ class Game:
 
 
 game = Game()
-player1 = input("enter player1:")
-player2 = input("enter player2:")
-game.add_player(player1)
-game.add_player(player2)
+
+game.add_player("Navya")
+game.add_player("Sravya")
 print("***** GAME STARTS NOW *****")
 print("***** Navya and Sree are playing!!! *****")
 game.play()
