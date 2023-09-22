@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}
+  register page
+{% endblock %}
+
+
+{% block content %}
+  <div class="container col-md-7">
+  <form method="POST" class="form-register" style="color:#245953">
+    {{ form.hidden_tag() }}
+    <br>
+    <h1 class="h3 mb-3 font-weight-normal text-center">Please Create Your Account</h1> <br>
+    <b>{{ form.firstname.label() }}</b>
+    {{ form.firstname(class="form-control", placeholder="Enter First Name") }}<br>
+
+    <b>{{ form.lastname.label() }}</b>
+    {{ form.lastname(class="form-control", placeholder="Enter Last Name") }}<br>
+
+    <b>{{ form.email_address.label() }}</b>
+    {{ form.email_address(class="form-control", placeholder="Enter Email id") }}<br>
+
+    <b>{{ form.phonenumber.label() }}</b>
+    {{ form.phonenumber(class="form-control", placeholder="Enter Phone Number") }}<br>
+
+    <b>{{ form.DOB.label() }}</b>
+    {{ form.DOB(class="form-control", placeholder="Enter DOB") }}<br>
+
+    <b>{{ form.Address.label() }}</b>
+    {{ form.Address(class="form-control", placeholder="Enter Address") }}<br>
+
+    <b>{{ form.password.label() }}</b>
+    {{ form.password(class="form-control", placeholder="Enter Password") }}<br>
+
+    <b>{{ form.confirm_password.label() }}</b>
+    {{ form.confirm_password(class="form-control", placeholder="Confirm Password") }}
+
+    <br>
+    <div class="checkbox mb-3">
+        <h6>Already have an account</h6>
+        <a class="btn btn-sn btn-secondary" href="{{ url_for('user_login')}}">Login now for user!!!</a>
+    </div>
+    {{ form.Submit(class="btn btn-lg btn-block btn-info") }}
+
+  </form>
+  </div>
+{% endblock %}

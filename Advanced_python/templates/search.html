@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+  user details page
+{% endblock %}
+{% block style %}
+    .table{
+        background-color:#245953;
+        color: #F9F5EB
+    }
+{% endblock %}
+
+
+
+{% block content %}
+<br>
+<h6 style="color:#245953"> You've searched for..: {{ searched }}</h6>
+<br>
+<form method="POST" action="{{ url_for('search') }}" class="d-flex">
+    {{ form.hidden_tag() }}
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
+    <button class="btn btn-outline-secondary" type="submit">
+        Search
+    </button>
+
+</form>
+<br>
+<br>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <!-- Your Columns HERE -->
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+            {% for things in searching1 %}
+            <tr>
+                <td>{{ things.first_name }}</td>
+                <td>{{ things.last_name }}</td>
+                <td>{{ things.email_address }}</td>
+                <td>{{ things.Phone_number }}</td>
+                <td>{{ things.DOB }}</td>
+            </tr>
+           {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
